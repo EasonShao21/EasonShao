@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Content</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  </head>
+  <style>
+    body{
+      background:url(images/concrete-texture.png);
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+    .wrapper{
+      margin:0 auto;
+      max-width: 1440px;
+    }
+    a{
+      font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: 20px;
+    }
+    a:hover{
+      text-decoration:none;
+    }
+    nav{
+      width: 100%;
+      background: #e5eeed
+    }
+    nav .navRight{
+      width: 100%;
+    }
+    nav .menu{ 
+      list-style: none;
+      width:80%;
+    }
+    .box{
+      position: relative;
+    }
+    nav .frame::before{
+      content:"";
+      width:60px;
+      border: 2px solid #c4a179;
+      height: 80%;
+      position: absolute;
+      top:12px;
+      left:20px;
+    }
+    nav .menu a{
+      color: #9fc0bc;
+      display: block;
+    }
+    nav .menu{
+      position: relative;
+    }
+    nav .menu a:hover{
+      color:#7bc4d1;
+      text-decoration:none;
+    }
+    nav .submenu{
+        background: #fafafa;
+        position: absolute; 
+        list-style: none;
+        width: 15%;
+        transition: .5s;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        width: 300%;
+    }
+    .box:hover .submenu{
+        display: block;
+        opacity: 1;
+        max-height: 300px;
+    }
+    .show_in_mobile{
+        display: none;
+    }
+    .bars{
+      position: relative;
+      cursor: pointer;
+      color: #9fc0bc;
+    }
+    .bars a{
+      color: #c4a179;
+    }
+    .bars a:hover{
+      color: #7e6e5c;
+      text-decoration: none;
+    }
+    .bars.active ul{
+      opacity: 1;
+    height: 100vh;
+    }
+    .bars ul{
+      list-style: none;
+      position:fixed;
+      background: #9fc0bc;
+      top:0px;
+      right:0px;
+      width: 465px;
+      height: 0;
+      z-index: 11;
+      opacity: 0;
+      transition: .5s;
+      overflow: hidden;
+      text-align: center;
+      padding-top: 100px;
+
+    }
+    @media screen and (max-width:768px){
+       .show_in_desk{
+         display: none!important ;
+        }
+        .show_in_mobile{
+          display: block;
+        }
+    }
+    .title{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color:#c4a179;
+        text-align: center;
+        font-size:30px;
+    }
+.more{
+  font-family: 'Noto Sans TC', sans-serif;
+  display: block;
+  position: absolute;
+  border-radius: 5px;
+  opacity: 0;
+  background: #c4a179;
+  width: 100%;
+  height: 100%;
+}
+.more:hover{
+  opacity: .9;
+}
+.more:hover p{
+  color: #e0dacc;
+}
+    .main{
+      background: #9fc0bc;
+      width:250px;
+      height: 25vh;
+      box-shadow: 0 0 5px #666;
+      border-radius: 5px;
+      position: relative;
+    }
+    figure{
+      width: 200px;
+      height: 200px;
+      margin:12px auto;
+      overflow: hidden;
+    }
+    figure img{
+      width: 100%;
+    }
+    @media screen and (max-width:768px){
+       .mainWrap{
+         flex-wrap: wrap;
+        margin: 0 auto;
+       }
+       .mainL{
+           padding-bottom:15px; 
+           width: 100%;
+       }
+       .mainR{
+           width: 100%;
+       }
+    }
+    </style>
+  <body>
+    <nav>
+        <div class="wrapper d-flex align-items-center">
+            <div class="logo px-5">
+                <a href="http://127.0.0.1:5501/board-game.html"><img src="images/logo.png" alt=""></a>
+            </div>
+              <div class="navRight d-flex justify-content-end">
+                <ul class="show_in_desk menu d-flex justify-content-around">
+                  <li class="box"><a class="frame" href="http://127.0.0.1:5501/board-game.html">HOME</a></li>
+                  <li class="box"><a class="frame" href="http://127.0.0.1:5501/board-about.html">ABOUT</a></li>
+                  <li class="box"><a class="frame" href="http://127.0.0.1:5501/board-content.html">CONTENT</a>
+                      <ul class="submenu">
+                          <li><a href="">Children Games</a></li>
+                          <li><a href="">Family Games</a></li>
+                          <li><a href="">Thematic Games</a></li>
+                      </ul>
+                  </li>
+                  <li class="box"><a class="frame" href="">NEWS</a></li>
+                  <li class="box"><a class="frame" href="">JOIN US</a></li>
+                </ul>
+                <div class="show_in_mobile bars">
+                    <i class="fas fa-bars fa-2x"></i>
+                    <ul>
+                        <li><a href="http://127.0.0.1:5501/board-game.html">HOME</a></li>
+                        <hr>
+                        <li><a href="http://127.0.0.1:5501/board-about.html">ABOUT</a></li>
+                        <hr>
+                        <li><a href="http://127.0.0.1:5501/board-content.html">CONTENT</a></li>
+                        <hr>
+                        <li><a href="">NEWS</a></li>
+                        <hr>
+                        <li><a href="">JOIN US</a></li>
+                    </ul>
+                  </div> 
+              </div>
+        </div>
+      </nav> 
+    <section>
+      <div class="wrapper">
+        <div class="title py-5">
+          CONTENT
+        </div>
+        <div class="mainWrap pb-3 d-flex justify-content-center">
+        <div class="mainL d-flex">
+                <div class="main mx-2">
+                    <a class="more" href="http://127.0.0.1:5501/board-items.html"><p>卡卡頌</p></a>
+                      <figure>
+                        <img src="images/桌遊圖/8.png" alt="">
+                      </figure>
+                    </div>
+                    <div class="main mx-2">
+                    <a class="more" href=""><p>妙筆神猜</p></a>
+                      <figure>
+                        <img src="images/桌遊圖/17.png" alt="">
+                      </figure>
+                      </div>
+                    <div class="main mx-2">
+                    <a class="more" href=""><p>電力公司</p></a>
+                        <figure>
+                          <img src="images/桌遊圖/18.png" alt="">
+                        </figure>
+                        </div>
+        </div>
+        <div class="mainR d-flex">
+                <div class="main mx-2">
+                        <a class="more" href=""><p>波多黎各</p></a>
+                        <figure>
+                          <img src="images/桌遊圖/19.png" alt="">
+                        </figure>
+                        </div>
+                  <div class="main mx-2">
+                          <a class="more" href=""><p>誰是牛頭王</p></a>
+                          <figure>
+                            <img src="images/桌遊圖/20.png" alt="">
+                          </figure>
+                          </div>
+                  <div class="main mx-2">
+                          <a class="more" href=""><p>乾杯</p></a>
+                          <figure>
+                            <img src="images/桌遊圖/21.png" alt="">
+                          </figure>
+                          </div>
+        </div>
+        </div>
+        
+        <div class="mainWrap pb-3 d-flex justify-content-center">
+                <div class="mainL d-flex">
+                        <div class="main mx-2">
+                            <a class="more" href="http://127.0.0.1:5501/board-items.html"><p>黑喵傑克</p></a>
+                              <figure>
+                                <img src="images/桌遊圖/1.png" alt="">
+                              </figure>
+                            </div>
+                            <div class="main mx-2">
+                            <a class="more" href=""><p>農家樂</p></a>
+                              <figure>
+                                <img src="images/桌遊圖/2.png" alt="">
+                              </figure>
+                              </div>
+                            <div class="main mx-2">
+                            <a class="more" href=""><p>水瓶座</p></a>
+                                <figure>
+                                  <img src="images/桌遊圖/3.png" alt="">
+                                </figure>
+                                </div>
+                </div>
+                <div class="mainR d-flex">
+                        <div class="main mx-2">
+                                <a class="more" href=""><p>碰！Bang！骰子版</p></a>
+                                <figure>
+                                  <img src="images/桌遊圖/4.png" alt="">
+                                </figure>
+                                </div>
+                          <div class="main mx-2">
+                                  <a class="more" href=""><p>血契獵殺</p></a>
+                                  <figure>
+                                    <img src="images/桌遊圖/5.png" alt="">
+                                  </figure>
+                                  </div>
+                          <div class="main mx-2">
+                                  <a class="more" href=""><p>種豆</p></a>
+                                  <figure>
+                                    <img src="images/桌遊圖/6.png" alt="">
+                                  </figure>
+                                  </div>
+                </div>
+                </div>
+
+                <div class="mainWrap pb-3 d-flex justify-content-center">
+                        <div class="mainL d-flex">
+                                <div class="main mx-2">
+                                    <a class="more" href="http://127.0.0.1:5501/board-items.html"><p>駱駝大賽</p></a>
+                                      <figure>
+                                        <img src="images/桌遊圖/7.png" alt="">
+                                      </figure>
+                                    </div>
+                                    <div class="main mx-2">
+                                    <a class="more" href=""><p>卡坦島</p></a>
+                                      <figure>
+                                        <img src="images/桌遊圖/9.png" alt="">
+                                      </figure>
+                                      </div>
+                                    <div class="main mx-2">
+                                    <a class="more" href=""><p>詐賭巫師</p></a>
+                                        <figure>
+                                          <img src="images/桌遊圖/10.png" alt="">
+                                        </figure>
+                                        </div>
+                        </div>
+                        <div class="mainR d-flex">
+                                <div class="main mx-2">
+                                        <a class="more" href=""><p>妙語說書人</p></a>
+                                        <figure>
+                                          <img src="images/桌遊圖/11.png" alt="">
+                                        </figure>
+                                        </div>
+                                  <div class="main mx-2">
+                                          <a class="more" href=""><p>袋中菲力貓</p></a>
+                                          <figure>
+                                            <img src="images/桌遊圖/12.png" alt="">
+                                          </figure>
+                                          </div>
+                                  <div class="main mx-2">
+                                          <a class="more" href=""><p>閃靈快手</p></a>
+                                          <figure>
+                                            <img src="images/桌遊圖/13.png" alt="">
+                                          </figure>
+                                          </div>
+                        </div>
+                        </div>
+
+            <div class="mainWrap pb-3 d-flex justify-content-center">
+        <div class="mainL d-flex">
+                <div class="main mx-2">
+                    <a class="more" href="http://127.0.0.1:5501/board-items.html"><p>情書</p></a>
+                      <figure>
+                        <img src="images/桌遊圖/14.png" alt="">
+                      </figure>
+                    </div>
+                    <div class="main mx-2">
+                    <a class="more" href=""><p>化裝舞會</p></a>
+                      <figure>
+                        <img src="images/桌遊圖/15.png" alt="">
+                      </figure>
+                      </div>
+                    <div class="main mx-2">
+                    <a class="more" href=""><p>從前從前</p></a>
+                        <figure>
+                          <img src="images/桌遊圖/16.png" alt="">
+                        </figure>
+                        </div>
+        </div>
+        <div class="mainR d-flex">
+                <div class="main mx-2">
+                        <a class="more" href=""><p>矮人礦坑</p></a>
+                        <figure>
+                          <img src="images/桌遊圖/22.png" alt="">
+                        </figure>
+                        </div>
+                  <div class="main mx-2">
+                          <a class="more" href=""><p>超級犀牛！</p></a>
+                          <figure>
+                            <img src="images/桌遊圖/23.png" alt="">
+                          </figure>
+                          </div>
+                  <div class="main mx-2">
+                          <a class="more" href=""><p>蟲蟲燒烤派對</p></a>
+                          <figure>
+                            <img src="images/桌遊圖/24.png" alt="">
+                          </figure>
+                          </div>
+        </div>
+        </div>
+    </section>  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+    $(".bars").click(function(){
+      $(this).toggleClass('active');
+    });
+    </script>
+  </body>
+</html>

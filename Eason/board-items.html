@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>卡卡頌</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+  </head>
+  <style>
+    body{
+      background:url(images/concrete-texture.png);
+      font-family: 'Noto Sans TC', sans-serif;
+    }
+    .wrapper{
+      margin: 0 auto;
+      max-width: 1440px;
+    }
+    a{
+      font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      font-size: 20px;
+    }
+    nav{
+      width: 100%;
+      background: #e5eeed
+    }
+    nav .navRight{
+      width: 100%;
+    }
+    nav .menu{ 
+      list-style: none;
+      width:80%;
+    }
+    .box{
+      position: relative;
+    }
+    nav .frame::before{
+      content:"";
+      width:60px;
+      border: 2px solid #c4a179;
+      height: 80%;
+      position: absolute;
+      top:12px;
+      left:20px;
+    }
+    nav .menu a{
+      color: #9fc0bc;
+      display: block;
+    }
+    nav .menu{
+      position: relative;
+    }
+    nav .menu a:hover{
+      color:#7bc4d1;
+      text-decoration:none;
+    }
+    nav .submenu{
+        background: #fafafa;
+        position: absolute; 
+        list-style: none;
+        width: 15%;
+        transition: .5s;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        width: 300%;
+    }
+    .box:hover .submenu{
+        display: block;
+        opacity: 1;
+        max-height: 500px;
+    } 
+    .show_in_mobile{
+        display: none;
+    }
+    .bars{
+      position: relative;
+      cursor: pointer;
+      color: #9fc0bc;
+    }
+    .bars a:hover{
+      color: #7e6e5c;
+      text-decoration: none;
+    }
+    .bars.active ul{
+      opacity: .9;
+      height: 100vh;
+    }
+    .bars ul{
+      list-style: none;
+      position: absolute;
+      background: #9fc0bc;
+      top:-80px;
+      right:0px;
+      width: 450px;
+      height: 0;
+      z-index: 11;
+      opacity: 0;
+      transition: .5s;
+      overflow: hidden;
+      text-align: center;
+      padding-top: 100px;
+    }
+    @media screen and (max-width:768px){
+       .show_in_desk{
+         display: none!important ;
+        }
+        .show_in_mobile{
+          display: block;
+        }
+    }
+/* ------------nav----------------     */
+
+        .bigPic{
+            width: 95%;
+            height: 92%;
+            background:#e5eeed;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #666;
+        }
+        .bigPic img{
+            width: 95%;
+            height:100%;
+            object-fit: cover;
+        }
+        .thumbnail{
+            width:95%;
+            background:#e5eeed;
+            border-radius: 5px;
+            box-shadow: 0 0 5px #666;
+        }
+        .thumbnail figure{
+            width: 72px;
+            height: 72px;
+            border: 4px solid transparent;
+            margin: 4px;
+        }
+        .thumbnail figure.active{
+            border: 4px solid red;
+        }
+        .thumbnail figure img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .container{
+          max-width:100%;
+          height: 75vh;
+        }
+        .left{
+          width:50%;
+        }
+
+        .right{
+          width: 50%;
+        }
+        .textWrap{
+          background:#c4a179;
+          border-radius: 5px;
+          box-shadow: 0 0 5px #666;
+        }
+        .text{
+          padding: 0 20px;
+          color:#e0dacc;
+        }
+        .textMain{
+          padding: 0 20px;
+          color:#e0dacc;
+        }
+        .textmainWrap{
+          background: #555e3e;
+          border-radius: 5px;
+          height: 37.8vh;
+          box-shadow: 0 0 5px #666;
+        }
+        @media screen and (max-width:768px){
+          .container{
+            flex-wrap:wrap;
+          }
+          .left{
+            width: 100%;
+            padding-left: 30px;
+            padding-top: 20px;
+          }
+          .right{
+            width: 96%;
+            padding:60px 0 0 30px; 
+          }
+    }
+  </style>
+  <body>
+    <nav>
+        <div class="wrapper navWrap d-flex align-items-center">
+            <div class="logo px-5">
+                <a href="http://127.0.0.1:5501/board-game.html"><img src="images/logo.png" alt=""></a>
+            </div>
+              <div class="navRight d-flex justify-content-end">
+                <ul class="show_in_desk menu d-flex justify-content-around">
+                  <li class="box"><a class="frame" href="http://127.0.0.1:5501/board-game.html">HOME</a></li>
+                  <li class="box"><a class="frame" href="http://127.0.0.1:5501/board-about.html">ABOUT</a></li>
+                  <li class="box"><a class="frame" href="http://127.0.0.1:5501/board-content.html">CONTENT</a>
+                      <ul class="submenu">
+                          <li><a href="">Children Games</a></li>
+                          <li><a href="">Family Games</a></li>
+                          <li><a href="">Thematic Games</a></li>
+                      </ul>
+                  </li>
+                  <li class="box"><a class="frame" href="">NEWS</a></li>
+                  <li class="box"><a class="frame" href="">JOIN US</a></li>
+                </ul>
+                <div class="show_in_mobile bars">
+                    <i class="fas fa-bars fa-2x"></i>
+                    <ul>
+                        <li><a href="http://127.0.0.1:5501/board-game.html">HOME</a></li>
+                        <hr>
+                        <li><a href="http://127.0.0.1:5501/board-about.html">ABOUT</a></li>
+                        <hr>
+                        <li><a href="http://127.0.0.1:5501/board-content.html">CONTENT</a></li>
+                        <hr>
+                        <li><a href="">NEWS</a></li>
+                        <hr>
+                        <li><a href="">JOIN US</a></li>
+                    </ul>
+                  </div> 
+              </div>
+        </div>
+      </nav> 
+      <section class="wrapper">
+    <div class="container py-3 d-flex">
+    <div class="left" data-aos="fade-right">
+        <figure class="bigPic">
+          <img id="mainPic" src="images/桌遊圖/8.png" alt="">
+        </figure>
+        <div id="thumbnail" class=" d-flex  justify-content-center thumbnail">
+            <figure>
+                <img src="images/桌遊圖/8.png" alt="">
+            </figure>
+            <figure>
+              <img src="images/carca1.jpg" alt="">
+          </figure>
+          <figure>
+              <img src="images/carca2.jpg" alt="">
+          </figure>
+          <figure>
+              <img src="images/carca3.jpg" alt="">
+          </figure>
+          <figure>
+              <img src="images/carca4.jpg"alt="">
+          </figure>
+        </div>
+      </div>
+      <div class="right" data-aos="fade-left">
+        <div class="textWrap">
+          <div class="text py-2">
+          <h2>CARCASSONNE</h2>
+          <h3>卡卡頌</h3>
+          <hr>
+          <h5>卡卡頌是位於法國南部的一座美麗古城，也是中古時代教會對抗異教徒的重鎮 ，這座城堡牢不可破的防禦工事，不論是在當時或今天都堪稱一絕！<br>
+          在一塊塊拼起的版圖中有城堡、道路、草原和修道院，隨著回合的進行，版圖將逐漸擴大。玩家如同中古時代的君王或諸侯，派遣手下去開疆拓土，手下可擔任騎士、強盜、農夫或修士，去建立、管理或佔領城堡、道路、草原和修道院。每拼放一塊版圖，玩家就有機會派遣手下擔任一個角色，如何拼放和派遣才能讓你在遊戲終了時獲得最高的分數？在你發現大好的得分機會時，手中還有可以派遣的手下嗎？
+          </h5>
+        </div>
+        <hr>
+        </div>
+        <div class="textmainWrap">
+        <div class="textMain py-2">
+          <h5>8歲以上｜2-5人｜30-45分鐘</h5>
+          <hr>
+          <h5>牌套：47×47mm×84張</h5>
+          <hr>
+          <h3>NT.1160</h3>
+        </div>
+        </div>
+      </div>
+    </div>    
+    </section>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      $(".bars").click(function(){
+      $(this).toggleClass('active');
+    });
+      AOS.init();
+        $("#thumbnail figure").click(function(){
+            let img=$(this).find("img").attr("src");
+            console.log(img);
+
+            $(this).addClass("active").siblings().removeClass("active");
+
+            $("#mainPic").attr("src", img)
+    });
+    </script>
+  </body>
+</html>
